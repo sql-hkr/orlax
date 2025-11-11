@@ -1,0 +1,36 @@
+[project]
+name = "orlax"
+version = "0.1.0"
+description = "Extensible offline reinforcement learning framework built with JAX, Flax, and Optax"
+readme = "README.md"
+authors = [{ name = "sql-hkr", email = "sql.hkr@gmail.com" }]
+requires-python = ">=3.11"
+dependencies = [
+    "jax>=0.4.20",
+    "jaxlib>=0.4.20",
+    "flax>=0.7.5",
+    "optax>=0.1.7",
+    "wandb>=0.16.0",
+    "tqdm>=4.66.0",
+    "numpy>=1.24.0",
+    "distrax>=0.1.5",
+    "setuptools>=80.9.0",
+    "mujoco==3.2.3",
+    "minari[all]>=0.5.3",
+    "pillow>=11.3.0",
+    "imageio>=2.37.2",
+    "matplotlib>=3.9.4",
+    "gymnasium-robotics>=1.2.3",
+]
+
+[project.scripts]
+orlax-train = "orlax.scripts.run:main"
+orlax-eval = "orlax.scripts.eval:main"
+orlax-export = "orlax.scripts.export:main"
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=8.4.2", "ruff>=0.14.4"]
