@@ -3,7 +3,7 @@
 An extensible, research-friendly offline RL framework built with JAX, Flax, and Optax.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Core utilities
 from .core.cfg import TrainingCfg, ModelCfg, AlgoCfg, EvalCfg
