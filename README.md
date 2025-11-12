@@ -1,5 +1,8 @@
 # ORLax - Offline Reinforcement Learning with JAX
 
+[![PyPI version](https://img.shields.io/pypi/v/orlax)](https://pypi.org/project/orlax/)
+[![License](https://img.shields.io/github/license/sql-hkr/orlax)](LICENSE)
+
 **ORLax** is an extensible, research-friendly offline reinforcement learning framework built with JAX, Flax, and Optax. It provides clean, typed APIs optimized for editor autocompletion, modular algorithm implementations, and production-ready features like WandB logging and GPU acceleration.
 
 ## Features
@@ -23,7 +26,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/orlax.git
+git clone https://github.com/sql-hkr/orlax.git
 cd orlax
 
 # Install with uv
@@ -34,7 +37,7 @@ uv sync
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/orlax.git
+git clone https://github.com/sql-hkr/orlax.git
 cd orlax
 
 # Install in editable mode
