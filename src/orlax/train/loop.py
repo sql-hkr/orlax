@@ -44,7 +44,8 @@ def eval_episode(
     Returns:
         Total episode reward
     """
-    obs = env.reset()
+    reset_out = env.reset()
+    obs = reset_out[0] if isinstance(reset_out, tuple) else reset_out
     done = False
     total_reward = 0.0
     steps = 0
@@ -54,8 +55,13 @@ def eval_episode(
         action = eval_fn(state, obs_tensor)
         action = jax.device_get(action[0])
         
-        obs, reward, done, _ = env.step(action)
-        total_reward += reward
+        step_out = env.step(action)
+        if len(step_out) == 5:
+            obs, reward, terminated, truncated, _ = step_out
+            done = bool(terminated or truncated)
+        else:
+            obs, reward, done, _ = step_out
+        total_reward += float(reward)
         steps += 1
     
     return total_reward

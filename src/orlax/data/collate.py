@@ -2,7 +2,6 @@
 
 import jax
 import jax.numpy as jnp
-from typing import Any
 from ..core.types import Batch
 
 

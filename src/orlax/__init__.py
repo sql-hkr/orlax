@@ -19,10 +19,40 @@ from .data.dataset import Dataset, normalize_dataset
 
 # Models
 from .models.mlp import MLP
-from .models.nets import Actor, Critic, ValueNetwork
+from .models.nets import (
+    Actor,
+    Critic,
+    ValueNetwork,
+    ConditionalVAE,
+    EnsembleDynamics,
+    DiffusionModel,
+    DiffusionSchedule,
+)
 
 # Algorithms
-from .algos import BC, CQL, IQL, ALGORITHMS
+from .algos import (
+    BC,
+    CQL,
+    IQL,
+    SAC,
+    PPO,
+    TD3BC,
+    TD3_BC,
+    BCQ,
+    CRR,
+    PLAS,
+    EDAC,
+    MOPO,
+    RAMBO,
+    COMBO,
+    MOBILE,
+    MCQ,
+    BREMEN,
+    DiffusionQL,
+    EDP,
+    XQL,
+    ALGORITHMS,
+)
 
 # Training
 from .train.runner import ExperimentRunner
@@ -54,11 +84,31 @@ __all__ = [
     "Actor",
     "Critic",
     "ValueNetwork",
-    "QNetwork",
+    "ConditionalVAE",
+    "EnsembleDynamics",
+    "DiffusionModel",
+    "DiffusionSchedule",
     # Algorithms
     "BC",
     "CQL",
     "IQL",
+    "SAC",
+    "PPO",
+    "TD3BC",
+    "TD3_BC",
+    "BCQ",
+    "CRR",
+    "PLAS",
+    "EDAC",
+    "MOPO",
+    "RAMBO",
+    "COMBO",
+    "MOBILE",
+    "MCQ",
+    "BREMEN",
+    "DiffusionQL",
+    "EDP",
+    "XQL",
     "ALGORITHMS",
     # Training
     "ExperimentRunner",

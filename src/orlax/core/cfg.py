@@ -82,6 +82,26 @@ class AlgoCfg:
     expectile: float = 0.7
     use_automatic_entropy_tuning: bool = True
     n_critics: int = 2
+    # PPO hyperparameters
+    clip_eps: float = 0.2
+    entropy_coef: float = 0.01
+    # SAC hyperparameters
+    target_entropy: Optional[float] = None
+    # TD3+BC hyperparameters
+    target_noise: float = 0.2
+    noise_clip: float = 0.5
+    policy_freq: int = 2
+    # Model-based / Regularization hyperparameters
+    lmbda: float = 1.0
+    latent_dim: int = 64
+    n_models: int = 4
+    rollout_horizon: int = 5
+    eta: float = 1.0
+    crr_weight_type: str = "exp"
+    # Diffusion policy hyperparameters (Diffusion-QL, EDP)
+    num_diffusion_steps: int = 5
+    # XQL hyperparameters
+    xql_clip_max: float = 10.0
 
 
 @dataclass(frozen=True)
