@@ -16,9 +16,27 @@
 
 ## Algorithms
 
-- **BC** (Behavioral Cloning) - Supervised learning from expert demonstrations
-- **CQL** (Conservative Q-Learning) - Conservative offline RL with Q-value penalties
-- **IQL** (Implicit Q-Learning) - Expectile regression-based offline RL
+Implemented in modular JAX/Flax, ordered chronologically by original paper publication / arXiv submission:
+
+- **BC** (Behavioral Cloning, 1989) - Supervised policy learning from demonstration data
+- **PPO** (Proximal Policy Optimization, Jul 2017) - Clipped surrogate objective policy gradient
+- **SAC** (Soft Actor-Critic, Jan 2018) - Off-policy maximum entropy actor-critic
+- **BCQ** (Batch-Constrained deep Q-learning, Dec 2018) - Generative action manifold constraint via CVAE
+- **MOPO** (Model-based Offline Policy Optimization, May 2020) - Dynamics ensemble with uncertainty reward penalty
+- **CQL** (Conservative Q-Learning, Jun 2020) - Conservative offline RL with Q-value penalties
+- **CRR** (Critic Regularized Regression, Jun 2020) - Advantage-weighted policy regression
+- **BREMEN** (Behavior-Regularized Model-Ensemble, Jul 2020) - Imaginary rollouts with empirical behavior regularization
+- **PLAS** (Policy in Latent Action Space, Nov 2020) - Policy optimization inside CVAE latent space
+- **COMBO** (Conservative Offline Model-Based Policy Optimization, Feb 2021) - Model rollouts with conservative Q-regularization
+- **TD3+BC** (Twin Delayed DDPG + Behavioral Cloning, Jun 2021) - Minimalist offline RL with BC regularization
+- **EDAC** (Ensemble-Diversified Actor Critic, Oct 2021) - Q-ensemble with gradient diversity regularization
+- **IQL** (Implicit Q-Learning, Oct 2021) - Expectile regression-based offline RL avoiding OOD queries
+- **RAMBO** (Robust Adversarial Model-Based Offline RL, Apr 2022) - Pessimistic adversarial dynamics modeling
+- **MCQ** (Masked Conservative Q-Learning, Jun 2022) - Masked out-of-distribution conservative Q-learning
+- **Diffusion-QL** (Diffusion Q-Learning, Aug 2022) - Continuous diffusion policy with Q-learning guidance
+- **XQL** (Extreme Q-Learning, Mar 2023) - Gumbel regression on value function for optimal offline RL
+- **MOBILE** (Model-Based Offline Policy Optimization with Local Uncertainty Regularization, Mar 2023) - Local Bellman uncertainty penalty
+- **EDP** (Efficient Diffusion Policy, May 2023) - Decoupled diffusion policy with advantage-weighted score matching
 
 ## Installation
 
@@ -60,6 +78,16 @@ pip install --upgrade "jax[cuda12]"
 ```bash
 # Train IQL on Hopper-Medium
 uv run orlax-train --config configs/iql_hopper.toml
+```
+
+### Verification & Testing
+
+```bash
+# Run multi-step training verification across all 19 algorithms (Apple Metal GPU / CUDA / CPU)
+uv run python scripts/verify_all_training.py
+
+# Run test suite
+uv run pytest
 ```
 
 ## Citation

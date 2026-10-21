@@ -1,6 +1,6 @@
 """Minari dataset adapter for loading offline RL datasets."""
 
-from typing import Optional, Any
+from typing import Any
 import numpy as np
 
 try:

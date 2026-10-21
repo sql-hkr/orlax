@@ -10,8 +10,8 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "jax>=0.4.20",
-    "jaxlib>=0.4.20",
+    "jax>=0.4.26,<=0.4.35",
+    "jaxlib>=0.4.26,<=0.4.35",
     "flax>=0.7.5",
     "optax>=0.1.7",
     "wandb>=0.16.0",
@@ -25,6 +25,7 @@ dependencies = [
     "imageio>=2.37.2",
     "matplotlib>=3.9.4",
     "gymnasium-robotics>=1.2.3",
+    "jax-metal>=0.1.1",
 ]
 
 [project.scripts]

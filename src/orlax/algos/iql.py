@@ -42,7 +42,7 @@ class IQL:
         self.act_dim = act_dim
         self.cfg = cfg
         self.model_cfg = model_cfg
-        self.model_cfg = algo_cfg
+        self.algo_cfg = algo_cfg
         
         self.actor = Actor(
             action_dim=act_dim,
